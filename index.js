@@ -1,10 +1,10 @@
-const { foreachListItem } = require('./util')
+const { foreachAllListItem } = require('./util')
 
 const main = async () => {
   // 热点新闻
   console.log('热点新闻：')
-  await foreachListItem('http://xsh.hdu.edu.cn/list-2-1.html', $ => (index, el) => {
-    console.log('%d: 《%s》%s', index + 1, $(el).children('h3').text(), $(el).children('h5').text())
+  await foreachAllListItem(2, ($, page) => (index, el) => {
+    console.log('第%d页第%d条：《%s》', page, index + 1, $(el).children('h3').text())
   })
 }
 
