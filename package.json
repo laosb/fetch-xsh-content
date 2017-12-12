@@ -1,0 +1,26 @@
+{
+  "name": "fetch-xsh-content",
+  "version": "0.1.0",
+  "description": "Fetch old content before Dec 2017 on xsh.hdu.edu.cn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laosb/fetch-xsh-content.git"
+  },
+  "author": "laosb <laosb@lasteam.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/laosb/fetch-xsh-content/issues"
+  },
+  "homepage": "https://github.com/laosb/fetch-xsh-content#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
