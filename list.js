@@ -11,6 +11,7 @@ const foreachAllListItem = async (listId, eachCons) => {
   for (let i = 1; i <= totalPages; i++) {
     await foreachListItem(getListPageUrl(listId, i), eachCons, i)
   }
+  return 0
 }
 
 module.exports = {
