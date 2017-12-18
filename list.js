@@ -1,11 +1,9 @@
-const { fetchAndParse } = require('./util')
+const { fetchAndParse, getListPageUrl } = require('./util')
 
 const foreachListItem = async (url, eachCons, info) => {
   const $ = await fetchAndParse(url)
   return $('ul.listmod>li').each(eachCons($, info))
 }
-
-const getListPageUrl = (id, page) => `http://old.hduxiaohui.com/list-${id}-${page}.html`
 
 const foreachAllListItem = async (listId, eachCons) => {
   const firstPage$ = await fetchAndParse(getListPageUrl(listId, 1))
