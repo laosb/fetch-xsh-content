@@ -1,4 +1,4 @@
-const { foreachAllListItem } = require('./util')
+const { foreachAllListItem } = require('./list')
 
 const main = async () => {
   // 热点新闻
