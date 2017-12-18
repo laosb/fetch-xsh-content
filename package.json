@@ -18,7 +18,10 @@
   "homepage": "https://github.com/laosb/fetch-xsh-content#readme",
   "dependencies": {
     "axios": "^0.17.1",
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "p-throttle": "^1.1.0"
   },
   "devDependencies": {
     "standard": "^10.0.3"
