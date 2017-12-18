@@ -11,7 +11,7 @@ const foreachListItem = async (url, eachCons, info) => {
   return $('ul.listmod>li').each(eachCons($, info))
 }
 
-const getListPageUrl = (id, page) => `http://xsh.hdu.edu.cn/list-${id}-${page}.html`
+const getListPageUrl = (id, page) => `http://old.hduxiaohui.com/list-${id}-${page}.html`
 
 const foreachAllListItem = async (listId, eachCons) => {
   const firstPage$ = await fetchAndParse(getListPageUrl(listId, 1))
