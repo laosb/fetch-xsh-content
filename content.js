@@ -5,7 +5,7 @@ const parseContentByUrl = async url => {
   return {
     title: $('#main > div.contentblock.corBlock.mar-t-10.lf.w75p > div > h1').text(),
     excerpt: $('#main > div.contentblock.corBlock.mar-t-10.lf.w75p > div > h3').text(),
-    content: $('#content').html(),
+    content: $('#content').html().replace('http://xsh.hdu.edu.cn', '{{CDN_PREFIX}}'),
     publishedAt: new Date($('#main > div.contentblock.corBlock.mar-t-10.lf.w75p > div > h2').text().split('　 ')[0])
   }
 }
