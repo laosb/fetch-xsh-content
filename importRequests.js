@@ -3,7 +3,6 @@ const cuid = require('cuid')
 const moment = require('moment')
 const throttle = require('p-throttle')
 const axiosPost = throttle(axios.post, 7, 1000)
-const axiosPut = throttle(axios.post, 7, 1000)
 
 axios.defaults.baseURL = process.env.BASE_URL || 'http://localhost:3000'
 
@@ -15,23 +14,20 @@ const login = async (username, password) => {
 
 const logout = bearer => axiosPost('/api/v1/logout')
 
-const importOnePost = async ({ title, content, publishedAt, tags }) => {
-  const { data } = await axiosPost('/api/v1/apostrophe-blog', {
-    title,
-    body: {
-      type: 'area',
-      items: [{
-        _id: cuid(),
-        type: 'apostrophe-rich-text',
-        content
-      }]
-    },
-    published: false,
-    publishedAt: moment(publishedAt).format('YYYY-MM-DD'),
-    tags
-  })
-  return axiosPut('/api/v1/apostrophe-blog/' + data._id, {})
-}
+const importOnePost = ({ title, content, publishedAt, tags }) => axiosPost('/api/v1/apostrophe-blog', {
+  title,
+  body: {
+    type: 'area',
+    items: [{
+      _id: cuid(),
+      type: 'apostrophe-rich-text',
+      content
+    }]
+  },
+  published: false,
+  publishedAt: moment(publishedAt).format('YYYY-MM-DD'),
+  tags
+})
 
 module.exports = {
   login,
