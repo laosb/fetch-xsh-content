@@ -10,7 +10,7 @@ permission from HDU Student Union is NOT allowed in any case.
 
 ```
 npm i
-OUTPUT=<your output dir> node index
+OUTPUT=<your output dir> node fetch-old
 ```
 
 You may adjust network throttle augments in `util.js`, since different OS have
